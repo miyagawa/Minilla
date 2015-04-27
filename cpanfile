@@ -51,13 +51,6 @@ requires 'Getopt::Long', 2.36;
 # Module required for license otherwise Perl_5 license.
 recommends 'Software::License', '0.103010';
 
-# release testing
-recommends 'Test::Pod';
-recommends 'Test::Spellunker', 'v0.2.7';
-recommends 'Test::MinimumVersion' => '0.101080';
-recommends 'Test::CPAN::Meta';
-recommends 'Test::PAUSE::Permissions';
-
 on 'test' => sub {
     requires 'Test::More' => '0.98';
     requires 'Test::Requires' => 0;
@@ -75,5 +68,10 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
+    recommends 'Test::Pod';
+    recommends 'Test::Spellunker', 'v0.2.7';
+    recommends 'Test::MinimumVersion' => '0.101080';
+    recommends 'Test::CPAN::Meta';
+    recommends 'Test::PAUSE::Permissions';
     # Dependencies for developers
 };
